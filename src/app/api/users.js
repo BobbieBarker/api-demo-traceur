@@ -9,11 +9,11 @@ class UserService {
     HTTP.set(this, $http);
   }
 
-  getUsers(){
-    return HTTP.get(this).get(BASE_URL + '/users').then(result => result.data);
+  get(){
+    return HTTP.get(this).get(`${BASE_URL}/users`).then(result => result.data);
   }
 
-  deleteUser(id){
+  remove(id){
     return HTTP.get(this).delete(BASE_URL + '/users/' + id).then(result => result.data);
   }
 

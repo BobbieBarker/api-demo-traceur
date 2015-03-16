@@ -4,7 +4,15 @@
 class MainCtrl {
   constructor ($scope, PlaceHolderApi) {
     console.log(PlaceHolderApi)
-    PlaceHolderApi.users.getUsers().then(function(data){
+    PlaceHolderApi.users.get().then(data => {
+      console.log(data)
+    })
+
+    PlaceHolderApi.posts.get().then(data => {
+      console.log(data)
+    })
+
+    PlaceHolderApi.users.remove(1).then(data => {
       console.log(data)
     })
   }

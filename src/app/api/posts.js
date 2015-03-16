@@ -9,8 +9,8 @@ class PostService {
     HTTP.set(this, $http);
   }
 
-  getPosts(){
-    return HTTP.get(this).get(BASE_URL + '/posts').then(result => result.data);
+  get(){
+    return HTTP.get(this).get(`${BASE_URL}/posts`).then(result => result.data);
   }
 
   static postsFactory($http){
