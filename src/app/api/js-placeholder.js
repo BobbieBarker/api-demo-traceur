@@ -1,25 +1,11 @@
 'use strict';
 /*jshint esnext: true */
 
-const users = new WeakMap();
-const posts = new WeakMap();
-
 class PlaceHolderApi {
-constructor(UserService, PostService){
-  users.set(this, UserService)
-  posts.set(this, PostService)
-}
-
-users(){
-  return users.get(this);
-}
-
-posts(){
-  return posts.get(this);
-}
-
-
-
+  constructor(UserService, PostService){
+    this.users = UserService;
+    this.posts = PostService;
+  }
 }
 
 PlaceHolderApi.$inject = ['UserService', 'PostService'];
