@@ -2,6 +2,7 @@
 /*jshint esnext: true */
 
 import {BASE_URL} from './api-config';
+var moduleName = 'apiDemoTraceur.api.UserService';
 
 const HTTP = new WeakMap();
 class UserService {
@@ -14,7 +15,11 @@ class UserService {
   }
 
   remove(id){
-    return HTTP.get(this).delete(BASE_URL + '/users/' + id).then(result => result.data);
+    return HTTP.get(this).delete(`${BASE_URL}/users/${id}`).then(result => result.data);
+  }
+
+  update(id){
+    return  HTTP.get(this).put(`${BASE_URL}/users/${id}`).then(result => result.data);
   }
 
   static userFactory($http){
@@ -23,4 +28,5 @@ class UserService {
 }
 
 UserService.userFactory.$inject = ['$http'];
-export default UserService
+angular.module(moduleName, []).service('UserService', UserService);
+export default moduleName

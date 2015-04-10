@@ -2,6 +2,7 @@
 
 import {BASE_URL} from './api-config';
 
+var moduleName = 'apiDemoTraceur.api.PostService';
 const HTTP = new WeakMap();
 
 class PostService {
@@ -13,10 +14,16 @@ class PostService {
     return HTTP.get(this).get(`${BASE_URL}/posts`).then(result => result.data);
   }
 
-  static postsFactory($http){
-    return new PostService($http)
+  remove(id){
+    return HTTP.get(this).delete(`${BASE_URL}/posts/${id}`).then(result => result.data);
   }
+
+  update(id){
+    return HTTP.get(this).put(`${BASE_URL}/posts/${id}`).then(result => result.data);
+  }
+
 }
 
-PostService.postsFactory.$inject = ['$http'];
-export default PostService;
+PostService.$inject = ['$http'];
+angular.module(moduleName, []).service('PostService', PostService);
+export default moduleName;

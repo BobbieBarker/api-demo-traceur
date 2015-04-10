@@ -1,6 +1,6 @@
 'use strict';
 /*jshint esnext: true */
-
+var moduleName = 'apiDemoTraceur.api.PlaceHolderApi'
 class PlaceHolderApi {
   constructor(UserService, PostService){
     this.users = UserService;
@@ -9,5 +9,5 @@ class PlaceHolderApi {
 }
 
 PlaceHolderApi.$inject = ['UserService', 'PostService'];
-
-export default PlaceHolderApi;
+angular.module(moduleName, []).service('PlaceHolderApi', PlaceHolderApi);
+export default moduleName;
