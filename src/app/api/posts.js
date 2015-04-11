@@ -2,28 +2,25 @@
 
 import {BASE_URL} from './api-config';
 
-var moduleName = 'apiDemoTraceur.api.PostService';
-const HTTP = new WeakMap();
 
-class PostService {
-  constructor($http){
-    HTTP.set(this, $http);
+export default class ckPostService {
+  constructor(){
+
   }
 
   get(){
-    return HTTP.get(this).get(`${BASE_URL}/posts`).then(result => result.data);
+    console.log('get');
+    return 'get';
   }
 
   remove(id){
-    return HTTP.get(this).delete(`${BASE_URL}/posts/${id}`).then(result => result.data);
+    console.log('remove');
+    return 'remove';
   }
 
   update(id){
-    return HTTP.get(this).put(`${BASE_URL}/posts/${id}`).then(result => result.data);
+    console.log('update');
+    return 'update';
   }
 
 }
-
-PostService.$inject = ['$http'];
-angular.module(moduleName, []).service('PostService', PostService);
-export default moduleName;

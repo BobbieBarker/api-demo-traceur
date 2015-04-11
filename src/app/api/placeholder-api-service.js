@@ -1,13 +1,20 @@
 'use strict';
 /*jshint esnext: true */
-var moduleName = 'apiDemoTraceur.api.PlaceHolderApi'
-class PlaceHolderApi {
-  constructor(UserService, PostService){
-    this.users = UserService;
-    this.posts = PostService;
+import {Injector, Inject, bind} from 'angular2/di';
+import {default as ckPostService} from './posts';
+import {default as ckUserService} from './users'
+
+var moduleName = 'apiDemoTraceur.api.sdk'
+
+const  sdk = () => {
+  let injector = new Injector([ckPostService, ckUserService]);
+  let UserService = injector.get(ckUserService)
+  let PostService = injector.get(ckPostService);
+  return {
+    PostService: PostService,
+    UserService: UserService
   }
 }
 
-PlaceHolderApi.$inject = ['UserService', 'PostService'];
-angular.module(moduleName, []).service('PlaceHolderApi', PlaceHolderApi);
-export default moduleName;
+angular.module(moduleName, []).factory('ckSDK', sdk);
+export default moduleName
