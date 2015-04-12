@@ -3,7 +3,7 @@
 
 import MainCtrl from './main/main.controller';
 import NavbarCtrl from '../components/navbar/navbar.controller';
-import {default as libModule} from './lib-api/fancy-es6-lib';
+import {default as esSixLibModule}from './esSix-lib-demo/esSix-factory';
 
 angular.module('apiDemoTraceur', [
 'ngAnimate',
@@ -12,7 +12,7 @@ angular.module('apiDemoTraceur', [
 'ngSanitize',
 'ui.router',
 'ngMaterial',
-libModule
+esSixLibModule
 ])
   .controller('MainCtrl', MainCtrl)
   .controller('NavbarCtrl', NavbarCtrl)

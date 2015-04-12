@@ -1,8 +1,8 @@
 'use strict';
 
-var moduleName  = 'apiDemoTraceur.api';
+var moduleName  = 'esSixLib';
 
-import {sdk} from '../esSix-lib-demo/esSix-lib';
+import {sdk} from './esSix-lib';
 
 angular.module(moduleName, []).factory('ckSDK', sdk);
 export default moduleName;
