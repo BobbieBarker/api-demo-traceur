@@ -4,9 +4,9 @@ import {Injector, Inject, bind} from 'angular2/di';
 import {default as ckPostService} from './posts';
 import {default as ckUserService} from './users'
 
-var moduleName = 'apiDemoTraceur.api.sdk'
+//var moduleName = 'apiDemoTraceur.api.sdk'
 
-const  sdk = () => {
+export const sdk = () => {
   let injector = new Injector([ckPostService, ckUserService]);
   let UserService = injector.get(ckUserService)
   let PostService = injector.get(ckPostService);
@@ -16,5 +16,5 @@ const  sdk = () => {
   }
 }
 
-angular.module(moduleName, []).factory('ckSDK', sdk);
-export default moduleName
+//angular.module(moduleName, []).factory('ckSDK', sdk);
+//export default moduleName

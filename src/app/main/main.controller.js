@@ -3,8 +3,8 @@
 
 class MainCtrl {
   constructor ($scope, ckSDK) {
+    console.log(ckSDK)
     console.log(ckSDK.PostService.get());
-
   }
 }
 

@@ -3,7 +3,7 @@
 import {BASE_URL} from './api-config';
 
 
-export default class ckPostService {
+export default class PostService {
   constructor(){
 
   }
