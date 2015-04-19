@@ -1,0 +1,21 @@
+{
+  "name": "apiDemoTraceur",
+  "version": "0.0.0",
+  "dependencies": {
+    "angular-animate": "~1.3.4",
+    "angular-cookies": "~1.3.4",
+    "angular-touch": "~1.3.4",
+    "angular-sanitize": "~1.3.4",
+    "angular-ui-router": "~0.2.13",
+    "angular-material": "*",
+    "lodash": "*",
+    "traceur-runtime": "*",
+    "angular": "*"
+  },
+  "devDependencies": {
+    "angular-mocks": "~1.3.4"
+  },
+  "resolutions": {
+    "angular": "*"
+  }
+}
