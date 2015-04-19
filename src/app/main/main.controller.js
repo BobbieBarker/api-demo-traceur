@@ -3,8 +3,18 @@
 
 class MainCtrl {
   constructor ($scope, ckSDK) {
-    console.log(ckSDK)
-    console.log(ckSDK.PostService.get());
+
+
+    console.log(ckSDK.Pipeline.postService.update());
+    console.log(ckSDK.Pipeline.userService.get());
+
+    console.log(ckSDK.Pipeline.userService.update());
+    console.log(ckSDK.Pipeline.postService.get());
+
+    console.log(ckSDK.Pipeline.postService.update());
+    console.log(ckSDK.Pipeline.userService.get());
+
+
   }
 }
 

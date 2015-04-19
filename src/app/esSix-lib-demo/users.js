@@ -1,16 +1,19 @@
 'use strict';
 /*jshint esnext: true */
-
 import {BASE_URL} from './api-config';
+import {Incrementor} from './test-incrementor';
+import {Injector, Inject, bind} from 'angular2/di';
 
-export default class UserService {
-  constructor(){
+
+export class UserService {
+  constructor(@Inject(Incrementor) incrementor: Incrementor){
+    this.incremetor = incrementor;
 
   }
 
   get(){
     console.log('get');
-    return 'get';
+    return this.incremetor.getVal();
   }
 
   remove(id){
@@ -18,8 +21,8 @@ export default class UserService {
     return 'remove';
   }
 
-  update(id){
-    console.log('update');
-    return 'update';
+  update(){
+    console.log('get');
+    return this.incremetor.setVal();
   }
 }

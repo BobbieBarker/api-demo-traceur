@@ -10,7 +10,7 @@ gulp.task('scripts', function () {
   return gulp.src(paths.src + '/{app,components}/**/*.js')
     .pipe($.jshint())
     .pipe($.jshint.reporter('jshint-stylish'))
-    .pipe($.traceur())
+    .pipe($.traceur({annotations: true, types: true, experimental: true}))
     .on('error', function handleError(err) {
       console.error(err.toString());
       this.emit('end');

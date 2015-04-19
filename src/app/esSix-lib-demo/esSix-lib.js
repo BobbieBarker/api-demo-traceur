@@ -1,20 +1,21 @@
 'use strict';
 /*jshint esnext: true */
 import {Injector, Inject, bind} from 'angular2/di';
-import {default as ckPostService} from './posts';
-import {default as ckUserService} from './users'
-
-//var moduleName = 'apiDemoTraceur.api.sdk'
+import {PostService} from './posts';
+import {UserService} from './users';
+import {Pipeline} from './pipeline';
+import {Incrementor} from './test-incrementor';
 
 export const sdk = () => {
-  let injector = new Injector([ckPostService, ckUserService]);
-  let UserService = injector.get(ckUserService)
-  let PostService = injector.get(ckPostService);
+  let injector = new Injector([
+    PostService,
+    UserService,
+    Pipeline,
+    Incrementor
+    ]);
+  let pipeline = injector.get(Pipeline)
+
   return {
-    PostService: PostService,
-    UserService: UserService
+    Pipeline: pipeline
   }
 }
-
-//angular.module(moduleName, []).factory('ckSDK', sdk);
-//export default moduleName
