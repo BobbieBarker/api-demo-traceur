@@ -13,9 +13,9 @@ export const sdk = () => {
     Pipeline,
     Incrementor
     ]);
-  let pipeline = injector.get(Pipeline)
+  let pipeline = injector.get(Pipeline);
 
   return {
     Pipeline: pipeline
-  }
-}
+  };
+};
