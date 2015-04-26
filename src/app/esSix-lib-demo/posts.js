@@ -1,6 +1,5 @@
 'use strict';
 import {Injector, Inject, bind} from 'angular2/di';
-import {BASE_URL} from './api-config';
 import {Incrementor} from './test-incrementor';
 
 export class PostService {
@@ -19,8 +18,9 @@ export class PostService {
   }
 
   update(){
-    console.log('get');
-    return this.incremetor.setVal();
+    return new Promise((resolve, reject) => {
+      resolve(this.incremetor.setVal());
+    })
   }
 
 }
