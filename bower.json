@@ -10,7 +10,8 @@
     "angular-material": "*",
     "lodash": "*",
     "traceur-runtime": "*",
-    "angular": "*"
+    "angular": "*",
+    "fetch": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.4"

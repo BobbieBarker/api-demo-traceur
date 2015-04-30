@@ -1,6 +1,7 @@
 'use strict';
 import {Injector, Inject, bind} from 'angular2/di';
 import {Incrementor} from './test-incrementor';
+import {BASE_URL} from './api-config';
 
 export class PostService {
   constructor(@Inject(Incrementor) incrementor: Incrementor){
@@ -8,8 +9,7 @@ export class PostService {
   }
 
   get(){
-    console.log('get');
-    return this.incremetor.getVal();
+    return fetch(`${BASE_URL}/posts`)
   }
 
   remove(id){

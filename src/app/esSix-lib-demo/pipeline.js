@@ -8,6 +8,7 @@ export class Pipeline {
     @Inject(UserService) userService: UserService,
     @Inject(PostService) postService: PostService
     ){
+      this.postService = postService;
       Pipeline.postService = postService;
       Pipeline.userService = userService;
   }
